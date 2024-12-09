@@ -145,6 +145,96 @@ body {
     line-height: 1.6;
 }
 
+/*Produto*/
+
+.produto{
+    background-color: #23461f;
+    padding:  0;
+    text-align: center;
+}
+
+.produto .texto{
+    text-align: center;
+    font-family: "Montserrat", Sans-serif;
+}
+
+.produto .texto h1{
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.produto .texto p{
+    font-size: 1.2em;
+    color: #ffffff; 
+    margin-top: -20px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.benefit img {
+    width: 20px;
+    height: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cta {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 30px; /* Espaçamento superior */
+}
+
+.cta button {
+    background-color: #84b814;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Alinha o texto e o ícone verticalmente */
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    justify-content: center; /* Centraliza o conteúdo dentro do botão */
+}
+
+.cta button:hover {
+    background-color: #6d9911;
+}
+
+.cta button img {
+    width: 20px;
+    height: 20px;
+}
+
+
 /* Testimonials */
 .testimonials {
     padding: 2rem 0;
