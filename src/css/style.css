@@ -182,25 +182,39 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 25%;
 }
 
 .benefit {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     background-color: rgba(0, 0, 0, 0.3);
     padding: 10px 15px;
     border-radius: 8px;
 }
 
-.benefit img {
-    width: 20px;
-    height: 20px;
+.benefit-icone{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Torna a borda circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 2px solid #FFD700;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-icone img {
+    width: 25px;
+    height: 25px;
 }
 
 .image-container img {
     width: 100%;
-    max-width: 300px;
+    max-width: 450px;
     height: auto;
     border-radius: 10px;
 }
