@@ -248,32 +248,53 @@ body {
     height: 20px;
 }
 
+/*perguntas*/
 
-/* Testimonials */
-.testimonials {
-    padding: 2rem 0;
+.perguntas{
+    display: flex; /* Ativa o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (se necessário) */
+    flex-direction: column; /* Mantém os elementos empilhados (se houver mais conteúdo) */
+    text-align: center; /* Centraliza o texto (opcional) */
+    padding: 20px; /* Adiciona espaçamento interno */
+    height: auto; /* Ajuste a altura da seção */
+}
+
+.perguntas h1{
+  color: #FFFFFF;
+  font-family: "Montserrat", Sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.container-perguntas{
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: 80%; /* Define uma largura para o contêiner */
+    max-width: 1200px; /* Limita a largura máxima */
+    text-align: center; /* Centraliza o texto dentro (opcional) */
+}
+
+.question {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0
+  }
+  
+  .question input,
+  .question .answer { display: none }
+  
+  .question label {
     background-color: #1b2d16;
-    text-align: center;
-}
-
-.testimonial-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.testimonial-item {
-    background-color: #23461f;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 300px;
-}
-
-.testimonial-item img {
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 0.5rem;
-}
+    display: inline-block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: 100%
+  }
+  
+  .question input:checked ~ .answer {
+    background-color: #0d6028;
+    display: block
+  }
 
 /* Pricing Section */
 .pricing {
