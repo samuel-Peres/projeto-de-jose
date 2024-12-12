@@ -27,21 +27,50 @@ body {
   }
 
   .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda a altura da tela */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(to right, #5A993E, #88C06D);
-    color: #fff;
-    padding: 20px;
+    overflow: hidden;
+    width: auto;
+    height: auto;
   }
   
+  
   .hero-content {
-    max-width: 50%;
+    top: -15%;
+    left: 5%;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    max-width: 45%;
+    text-align: left;
+  }
+
+  .hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0; /* Coloca a imagem de fundo atrás do conteúdo */
+  }
+  
+  .hero-content .logo {
+    width: 150px;
+    margin-bottom: 20px;
   }
   
   .hero-content h1 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content .highlight {
+    color: #FFD700; /* Destaca o texto com amarelo */
   }
   
   .hero-content ul {
@@ -50,35 +79,64 @@ body {
   }
   
   .hero-content ul li {
-    background: #4CAF50;
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
   }
   
   .btn-primary {
     display: inline-block;
-    background: #FFD700;
-    color: #333;
-    padding: 10px 20px;
+    padding: 15px 30px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
     text-decoration: none;
-    font-weight: bold;
     border-radius: 5px;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
   }
   
   .btn-primary:hover {
-    background: #FFC107;
-  }
-  
-  .hero img {
-    max-width: 40%;
+    background-color: #218838;
   }
 
+.whatsapp--v1{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-top: 30px; /* Espaçamento superior */
+}
+
+.whatsapp--v1 button {
+    background-color: #84b814;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Alinha o texto e o ícone verticalmente */
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    justify-content: center; /* Centraliza o conteúdo dentro do botão */
+}
+  
+ .benefits {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .benefits span {
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+
 /* Benefits Section */
-.benefits {
-    background-color: #23461f;
-    padding: 2rem 0;
+.benefit {
+    background-color: #133000;
+    padding: 0;
     text-align: center;
 }
 
@@ -117,23 +175,37 @@ body {
 }
 
 
+.transform-section {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Garantir que a seção ocupe toda a altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .transform-section img {
-    width: 100%; /* Faz a imagem ocupar todo o espaço do container */
-    height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Ajusta a imagem para cobrir o container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    z-index: 0; /* Coloca a imagem de fundo atrás do conteúdo */
 }
 
 .transform-section .texto {
     position: absolute; /* Faz o texto ficar sobre a imagem */
-    top: 86%; /* Centraliza verticalmente */
-    left: 50%; /* Centraliza horizontalmente */
-    transform: translate(-5%, -50%); /* Corrige o ponto de origem para o centro */
-    color: #fff; /* Cor do texto (branco) */
+    top: 40%; /* Centraliza verticalmente */
+    left: 70%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Centraliza o conteúdo no meio */
+    color: #fff; /* Cor do texto */
     text-align: center; /* Centraliza o texto */
-    max-width: 60%; /* Limita a largura do texto */
+    max-width: 70%; /* Ajuste da largura do texto conforme necessário */
     padding: 1rem;
     text-align: justify;
-    
+    z-index: 1; /* Fica acima da imagem */
 }
 
 .transform-section .texto h1 {
@@ -142,10 +214,15 @@ body {
     font-weight: bold;
 }
 
+.transform-section .texto h1 .highlight {
+    color: #FFD700; /* Destaca o texto com amarelo */
+}
+
 .transform-section .texto h2 {
     font-size: 1.2rem; /* Tamanho do subtítulo */
     line-height: 1.6;
 }
+
 
 /*Produto*/
 
@@ -194,11 +271,12 @@ body {
     justify-content: space-between;
     gap: 10px;
     background-color: rgba(0, 0, 0, 0.3);
-    padding: 10px 15px;
+    padding: 10px 5px;
     border-radius: 8px;
 }
 
 .benefit-icone{
+    left: 50%;
     width: 40px;
     height: 40px;
     border-radius: 50%; /* Torna a borda circular */
@@ -273,15 +351,14 @@ body {
 
 .container-perguntas{
     margin: 0 auto; /* Centraliza horizontalmente */
-    width: 80%; /* Define uma largura para o contêiner */
+    width: 55%; /* Define uma largura para o contêiner */
     max-width: 1200px; /* Limita a largura máxima */
     text-align: center; /* Centraliza o texto dentro (opcional) */
     text-align: justify; /* Justifica o texto */
 }
 
 .question {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0
+    padding: 0;
     
   }
   
@@ -289,16 +366,17 @@ body {
   .question .answer { display: none }
   
   .question label {
-    background-color: #1b2d16;
+    background-color: #337E03;
     display: inline-block;
     font-weight: bold;
     margin-bottom: 5px;
-    width: 100%
+    width: 100%;
+    padding: 5px;
   }
   
   .question input:checked ~ .answer {
-    background-color: #0d6028;
-    display: block
+    background-color: #0E2202;
+    display: block;
   }
 
 /* Pricing Section */
