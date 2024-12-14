@@ -36,17 +36,18 @@ body {
     overflow: hidden;
     width: auto;
     height: auto;
+    padding: 120px;
   }
   
   
   .hero-content {
-    top: -15%;
+    top: -85px;
     left: 5%;
     position: relative;
     z-index: 2;
-    padding: 20px;
     max-width: 45%;
     text-align: left;
+    gap: 10px;
   }
 
   .hero-bg-img {
@@ -61,12 +62,16 @@ body {
   
   .hero-content .logo {
     width: 150px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
   }
   
   .hero-content h1 {
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+    white-space: normal;
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+
   }
   
   .hero-content .highlight {
@@ -98,13 +103,16 @@ body {
     background-color: #218838;
   }
 
-.whatsapp--v1{
+.whatsapp{
+    position: absolute; 
+    left: 20;
     display: flex;
     justify-content: center; /* Centraliza horizontalmente */
-    margin-top: 30px; /* Espaçamento superior */
-}
+    margin-top: 15px; /* Espaçamento superior */
+    
+  }
 
-.whatsapp--v1 button {
+.whatsapp button{
     background-color: #84b814;
     color: #fff;
     border: none;
@@ -116,16 +124,27 @@ body {
     align-items: center; /* Alinha o texto e o ícone verticalmente */
     gap: 10px; /* Espaço entre o ícone e o texto */
     justify-content: center; /* Centraliza o conteúdo dentro do botão */
+  }
+
+.whatsapp button:hover {
+    background-color: #6d9911;
 }
+
+.whatsapp button img {
+    width: 20px;
+    height: 20px;
+}
+
   
- .benefits {
-    margin-top: 20px;
+.benefits {
+    position: absolute;
+    margin-top: 80px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
   }
   
-  .benefits span {
+.benefits span {
     font-size: 0.9rem;
     background: rgba(255, 255, 255, 0.2);
     padding: 5px 10px;
@@ -196,20 +215,20 @@ body {
 }
 
 .transform-section .texto {
-    position: absolute; /* Faz o texto ficar sobre a imagem */
-    top: 40%; /* Centraliza verticalmente */
-    left: 70%; /* Centraliza horizontalmente */
-    transform: translate(-50%, -50%); /* Centraliza o conteúdo no meio */
-    color: #fff; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    max-width: 70%; /* Ajuste da largura do texto conforme necessário */
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 65%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    max-width: 80%; /* Ajusta a largura máxima do texto */
     padding: 1rem;
     text-align: justify;
-    z-index: 1; /* Fica acima da imagem */
+    z-index: 1;
 }
 
 .transform-section .texto h1 {
-    font-size: 2rem; /* Tamanho do título principal */
+    font-size: clamp(1.5rem, 3vw, 1.5rem);
     margin-bottom: 1rem;
     font-weight: bold;
 }
@@ -219,7 +238,7 @@ body {
 }
 
 .transform-section .texto h2 {
-    font-size: 1.2rem; /* Tamanho do subtítulo */
+    font-size: clamp(1rem, 2vw, 0.5rem); /* Tamanho do subtítulo */
     line-height: 1.6;
 }
 
