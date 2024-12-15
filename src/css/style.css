@@ -208,8 +208,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0; /* Coloca a imagem de fundo atrás do conteúdo */
 }
@@ -276,6 +276,14 @@ body {
     margin-top: 30px;
     gap: 20px;
 }
+
+.benefits-container1 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 25%;
+}
+
 
 .benefits-container {
     display: flex;
@@ -425,3 +433,118 @@ body {
     text-align: center;
     padding: 1rem 0;
 }
+
+@media screen and (max-width: 1250px) {
+    .container {
+        width: 95%; /* Reduz a largura do container */
+        padding: 0 10px; /* Adiciona padding nas laterais */
+    }
+
+    /* Ajustes na seção hero */
+    .hero {
+        flex-direction: column; /* Empilha os elementos verticalmente */
+        padding: 50px 20px;
+        text-align: center;
+        height: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        top: -40px;
+        left: 0px;
+    }
+
+    .hero-content .logo {
+        width: 100px; /* Reduz o tamanho da logo */
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem; /* Reduz o tamanho do título */
+        word-wrap: break-word;
+    }
+
+    .hero-content ul li {
+        font-size: 1rem;
+    }
+
+
+    .benefits {
+        display: none;
+    }
+
+    .elemento {
+        width: 100%; /* Ocupa a largura total */
+    }
+
+    .transform-section{
+        display: none;
+    }
+
+    .transform-section .icones{
+        display: none;
+    }
+
+    .transform-section .icone{
+        margin-top: 2rem;
+    }
+
+    .transform-section .texto {
+        left: 50%;
+        max-width: 100%;
+        padding: 0.1rem;
+        font-size: 1rem;
+    }
+
+
+    /* Produto */
+    
+    .main-content {
+        flex-direction: column; /* Empilha os itens */
+        gap: 15px;
+    }
+
+    .benefits-container1 {
+        display: none;
+    }
+
+    .benefits-container {
+        width: 70%; /* Ocupa toda a largura */
+    }
+
+    .benefit {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .image-container img {
+        max-width: 50%; /* Ajusta imagem ao container */
+    }
+
+    /* Perguntas */
+    .container-perguntas {
+        width: 90%;
+    }
+
+    .question label {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+        flex-direction: column; /* Organiza os cards em coluna */
+        align-items: center;
+    }
+
+    .pricing-item {
+        width: 90%;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 0.9rem;
+    }
+}
+
