@@ -1,259 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Green Line</title>
-    <link rel="stylesheet" href="./src/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGOS DE COBRA</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #004ffa, #ab05f8);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.pontos{
+    font-size: 20px;
+    position: relative;
+    margin: 0px;
+    left: 240px;
+    border: 2px solid black;
+}
+.game-container {
+    position: relative;
+}
+
+canvas {
+    border: 2px solid black;
+    background-color: white;
+    display: none; /* Canvas escondido até o jogo começar */
+}
+
+button {
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    left: 0px;
+    top: 50px;
+}
+
+.Game-Over {
+    display: none;
+    margin-top: 20px;
+    font-size: 24px;
+    color: red;
+}
+
+    </style>
 </head>
 <body>
-  <header class="top-bar">
-    <p>ENTREGA PARA TODO O BRASIL</p>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <img src="./src/img/./logo/Imagem colada (5).png" alt="Logo Green Line Premium" class="logo">
-      <h1>Descubra o poder da nossa <span class="highlight">fórmula exclusiva</span> e alcance o corpo dos seus sonhos</h1>
-      <ul>
-        <li>✅ De forma rápida e natural</li>
-        <li>✅ Sem dietas malucas</li>
-        <li>✅ Produto 100% natural</li>
-      </ul>
-      <div class="whatsapp">
-        <button>
-            <img width="48" height="48" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/>
-            FALE COM UM ESPECIALISTA NO WHATSAPP
-        </button>
-     </div>
-      <div class="benefits">
-        <span>✔️ Compra Segura</span>
-        <span>✔️ Satisfação Garantida</span>
-        <span>✔️ Privacidade Protegida</span>
-      </div>
+    <h1>JOGOS DE COBRA</h1>
+    <div class="Game-Over" id="GameOver">Game Over</div>
+    <button id="startButton" style="padding: 10px 20px; font-size: 18px;">Iniciar Jogo</button>
+    <div class="pontos" id="scoreDisplay">Pontuação: 0</div>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="600" height="600"></canvas>
     </div>
-    <img src="./src/img/imagens/Imagem colada (2).png" alt="" class="hero-bg-img">
-  </section>
-
-    <section class="benefit" id="beneficios">
-        <div class="container">
-            <h2>Conheça os Benefícios do Premium</h2>
-
-            <div class="benefits-grid">
-                <div class="elemento">
-                    <img src="./src/img/icones/Imagem colada.png" alt="">
-                    <div class="benefit-item">Reduza a Fome Naturalmente</div>
-                </div>
-                <div class="elemento">
-                    <img src="./src/img/icones/Imagem colada (2).png" alt="">
-                    <div class="benefit-item">Alívio Rápido para o Inchaço</div>
-                </div>
-                
-                <div class="elemento">
-                    <img src="./src/img/icones/Imagem colada (3).png" alt="">
-                    <div class="benefit-item">Acelere seu Metabolismo</div>
-                </div>
-                
-                <div class="elemento">
-                    <img src="./src/img/icones/Imagem colada (4).png" alt="">
-                    <div class="benefit-item">Combata a Retenção de Líquidos</div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="transform-section">
-        <img class="icone" src="./src/img/imagens/Imagem colada (3).png" alt="">
-        <img class="icones" src="./src/img/imagens/Imagem colada.png" alt="Imagem de Fundo">
-        <div class="texto">
-            <h1>Transforme seu Corpo de <span class="highlight">Dentro para Fora</span></h1>
-            <h2>Com Green Line Premium, você não apenas perde peso, mas transforma seu corpo e sua saúde de dentro para fora. Nossa fórmula avançada age diretamente no metabolismo, ajudando você a queimar gordura, reduzir o inchaço e aumentar sua energia naturalmente. Alcance seus objetivos de forma saudável e duradoura, sentindo-se mais leve e confiante a cada dia!</h2>
-        </div>
-    </section>
-    <section class="produto">
-        <div class="texto">
-            <h1>Conheça os Benefícios do Premium</h1>
-            <p>Resultados rápidos e eficazes</p>
-        
-            <div class="main-content">
-                <div class="benefits-container1">
-                    <!-- Benefícios à esquerda -->
-                    <div class="benefit">
-                        <h3>Acelera o Metabolismo</h3>
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                    </div>
-                    <div class="benefit">
-                        <h3>Reduz o Inchaço</h3>
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                    </div>
-                    <div class="benefit">
-                        <h3>Controla o Apetite</h3>
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                    </div>
-                    <div class="benefit">
-                        <h3>Queima Gordura Localizada</h3>
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                    </div>
-                    <div class="benefit">
-                        <h3>Aumenta a Energia</h3>
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="image-container">
-                    <img src="./src/img/img do produto/produto-circulos.png" alt="Frasco do Premium">
-                </div>
-
-                <div class="benefits-container">
-                    <div class="benefit">
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                        <h3>Melhora a Digestão</h3>
-                    </div>
-                    <div class="benefit">
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                        <h3>Auxilia na Perda de Peso Natural</h3>
-                    </div>
-                    <div class="benefit">
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                        <h3>Promove o Bem-Estar Mental</h3>
-                    </div>
-                    <div class="benefit">
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                        <h3>Fortalece o Sistema Imunológico</h3>
-                    </div>
-                    <div class="benefit">
-                        <div class="benefit-icone">
-                            <img width="48" height="48" src="https://img.icons8.com/fluency/48/star--v1.png" alt="star--v1"/>
-                        </div>
-                        <h3>Fácil e Prático para o Dia a Dia</h3>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="cta">
-                <button>
-                    <img width="48" height="48" src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="whatsapp--v1"/>
-                    FALE COM UM ESPECIALISTA NO WHATSAPP
-                </button>
-            </div>
-
-        </div>
-    </section>
-    <section class="pricing">
-        <div class="container">
-            <h2>Aproveite 20% OFF</h2>
-            <div class="pricing-grid">
-                <div class="pricing-item">
-                    <h3>10 Dias</h3>
-                    <p>R$100,00</p>
-                    <a href="#" class="cta-button">Compre Agora</a>
-                </div>
-                <div class="pricing-item">
-                    <h3>20 Dias</h3>
-                    <p>R$180,00</p>
-                    <a href="#" class="cta-button">Compre Agora</a>
-                </div>
-                <div class="pricing-item">
-                    <h3>30 Dias</h3>
-                    <p>R$240,00</p>
-                    <a href="#" class="cta-button">Compre Agora</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="perguntas">
-        <h1>  
-            Perguntas Frequentes
-         </h1>
-        <div class="container-perguntas">
-            <div class="pergunta">
-                 <div class='question'>
-                    <input type='checkbox' id='question-1'>
-                    <label for='question-1'>O que são os emagrecedores?</label>
-                    <div class='answer'>
-                        Suplementos da Green Line Premium formulados para apoiar o emagrecimento de forma eficaz e segura.
-                    </div>
-                 </div>
-                  
-                 <div class='question'>
-                    <input type='checkbox' id='question-2'>
-                    <label for='question-2'>Por que devo usar os emagrecedores?</label>
-                    <div class='answer'>
-                        Ajudam a otimizar a perda de peso sem comprometer a saúde e o bem-estar.
-                    </div>
-                 </div>
-
-                 <div class='question'>
-                    <input type='checkbox' id='question-3'>
-                    <label for='question-3'> Os emagrecedores podem ser consumidos por crianças?</label>
-                    <div class='answer'>
-                        Não, são recomendados apenas para adultos; crianças devem seguir orientação médica.
-                    </div>
-                 </div>
-
-                 <div class='question'>
-                    <input type='checkbox' id='question-4'>
-                    <label for='question-4'>
-                        Por que apenas 10 cápsulas? </label>
-                    <div class='answer'>
-                        O PREMIUM contém 10 cápsulas, que oferecem resultados intensos, sendo geralmente suficientes para eliminar até 7 quilos. Contudo, é importante ressaltar que os resultados podem variar de acordo com cada organismo e metabolismo. Por essa razão, sempre recomendamos que o tratamento seja acompanhado de uma alimentação balanceada, ingestão adequada de água e prática regular de atividades físicas.
-                    </div>
-                 </div>
-
-                 <div class='question'>
-                    <input type='checkbox' id='question-5'>
-                    <label for='question-5'>O que é o Premium?</label>
-                    <div class='answer'>
-                        Suplemento focado em emagrecimento, com ação diurética para reduzir o inchaço e promover o bem-estar.
-                    </div>
-                 </div>
-
-                 <div class='question'>
-                    <input type='checkbox' id='question-6'>
-                    <label for='question-6'>Como tomar o Premium?</label>
-                    <div class='answer'>
-                        Ingerir uma cápsula após o café da manhã
-                    </div>
-                 </div>
-
-                 <div class='question'>
-                    <input type='checkbox' id='question-7'>
-                    <label for='question-7'>
-                        Qual a composição do Premium? </label>
-                    <div class='answer'>
-                        Composto por cafeína, gengibre, pectina, psyllium, taurina e picolinato de cromo para acelerar o metabolismo e reduzir líquidos.
-                    </div>
-                 </div>
-
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>© 2024 Green Line Premium. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+    <script src="./src/js/script.js"></script>
 </body>
 </html>
